@@ -9,7 +9,6 @@ func search(arr []int, n int) func() (bool, int) {
 	var i int
 	return func() (bool, int) {
 		i = (r + l) / 2
-		fmt.Println(r, l, i)
 		if arr[i] == n {
 			return true, i
 		} else if arr[i] < n {
@@ -25,8 +24,9 @@ func search(arr []int, n int) func() (bool, int) {
 
 func main() {
 	arr := []int{1, 2, 3, 6, 7, 9, 12, 21, 39} // your SORTED array
+	n := 9                                     // the number you would like to search for
 
-	search := search(arr, 39)
+	search := search(arr, n)
 	checker := false
 	var i int
 	for !checker {
